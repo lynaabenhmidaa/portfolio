@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - SnapFolio Bootstrap Template</title>
+  <title>Portfolio Details</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -26,14 +26,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: SnapFolio
-  * Template URL: https://bootstrapmade.com/snapfolio-bootstrap-portfolio-template/
-  * Updated: Jul 21 2025 with Bootstrap v5.3.7
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="portfolio-details-page">
@@ -44,42 +36,18 @@
     <div class="header-container d-flex flex-column align-items-start">
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero"><i class="bi bi-house navicon"></i>Home</a></li>
-          <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-          <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-          <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-          <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-          <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+          <li><a href="index.html#hero"><i class="bi bi-house navicon"></i> Home</a></li>
+          <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+          <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+          <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
         </ul>
       </nav>
 
       <div class="social-links text-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>
-
     </div>
-
   </header>
 
   <main class="main">
@@ -87,33 +55,30 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
+        <h1 class="mb-2 mb-lg-0" id="page-title">Portfolio Details</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li class="current">Portfolio Details</li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li class="current" id="breadcrumb-current">Details</li>
           </ol>
         </nav>
       </div>
-    </div><!-- End Page Title -->
+    </div>
 
     <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
 
+          <!-- Swiper slider -->
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper init-swiper">
-
               <script type="application/json" class="swiper-config">
                 {
                   "loop": true,
                   "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
+                  "autoplay": { "delay": 5000 },
                   "slidesPerView": "auto",
                   "pagination": {
                     "el": ".swiper-pagination",
@@ -122,133 +87,253 @@
                   }
                 }
               </script>
-
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-1.webp" alt="Portfolio Image" class="img-fluid" loading="lazy">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-10.webp" alt="Portfolio Image" class="img-fluid" loading="lazy">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-7.webp" alt="Portfolio Image" class="img-fluid" loading="lazy">
-                </div>
-
+              <div class="swiper-wrapper align-items-center" id="swiper-slides">
+                <!-- slides injected by JS -->
               </div>
               <div class="swiper-pagination"></div>
             </div>
           </div>
 
+          <!-- Project info sidebar -->
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-left" data-aos-delay="200">
               <h3>Project Information</h3>
               <ul>
-                <li><strong>Category</strong>: Web Development</li>
-                <li><strong>Client</strong>: Victoria Technologies</li>
-                <li><strong>Project date</strong>: 01 March, 2024</li>
-                <li><strong>Project URL</strong>: <a href="#" target="_blank">www.example.com</a></li>
+                <li><strong>Category</strong>: <span id="info-category">—</span></li>
+                <li><strong>Event</strong>: <span id="info-event">—</span></li>
+                <li><strong>Location</strong>: <span id="info-location">—</span></li>
+                <li><strong>Year</strong>: <span id="info-year">—</span></li>
+                <li><strong>Role</strong>: <span id="info-role">—</span></li>
               </ul>
             </div>
           </div>
 
+          <!-- Description -->
           <div class="col-lg-12">
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Project Overview</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
-              <p>
-                Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt molestiae laboriosam.
-              </p>
-
-              <div class="features mt-4">
-                <h3>Key Features</h3>
-                <div class="row gy-3">
-                  <div class="col-md-6">
-                    <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
-                      <i class="bi bi-check-circle-fill"></i>
-                      <h4>Responsive Design</h4>
-                      <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
-                      <i class="bi bi-shield-check"></i>
-                      <h4>Advanced Security</h4>
-                      <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="feature-item" data-aos="fade-up" data-aos-delay="600">
-                      <i class="bi bi-graph-up"></i>
-                      <h4>Performance Optimization</h4>
-                      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="feature-item" data-aos="fade-up" data-aos-delay="700">
-                      <i class="bi bi-gear"></i>
-                      <h4>Easy Integration</h4>
-                      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <h2 id="desc-title">Overview</h2>
+              <p id="desc-body-1"></p>
+              <p id="desc-body-2"></p>
             </div>
           </div>
 
         </div>
-
       </div>
-
-    </section><!-- /Portfolio Details Section -->
+    </section>
 
   </main>
 
   <footer id="footer" class="footer position-relative">
-
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Lyna</strong> <span>All Rights Reserved</span></p>
       </div>
     </div>
-
   </footer>
 
-  <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/js/main.js"></script>
 
-</body>
+  <script>
+    // ─── CATEGORY DATA ────────────────────────────────────────────────────────
+    // Edit the text, images, and info here for each subcategory.
+    // Images paths are relative to the portfolio-details.html file.
 
+    const categoryData = {
+
+      jcc: {
+        title: 'JCC — Journées Cinématographiques de Carthage',
+        breadcrumb: 'JCC',
+        info: {
+          category: 'Festivals',
+          event: 'Journées Cinématographiques de Carthage',
+          location: 'Tunis, Tunisia',
+          year: '2023',
+          role: 'Event Photographer'
+        },
+        description: {
+          title: 'About the JCC',
+          p1: 'The Journées Cinématographiques de Carthage (JCC) is one of Africa and the Arab world\'s oldest and most prestigious film festivals, held annually in Tunis. Founded in 1966, it brings together filmmakers, critics, and cinema lovers from across the continent and beyond.',
+          p2: 'My role during this edition was to document the atmosphere of the festival — from red carpet arrivals and panel discussions to candid moments between attendees and the energy of the screening halls. The goal was to capture the cultural richness and human stories behind the films.'
+        },
+        images: [
+          'assets/img/portfolio/festivaux/JCC1.webp',
+          'assets/img/portfolio/festivaux/jcc2.webp',
+          'assets/img/portfolio/festivaux/Jcc3.webp',
+          'assets/img/portfolio/festivaux/JCC4.webp',
+          'assets/img/portfolio/festivaux/jcc5.webp',
+          'assets/img/portfolio/festivaux/jcc6.webp',
+          'assets/img/portfolio/festivaux/JCC7.webp',
+          'assets/img/portfolio/festivaux/JCC8.webp',
+          'assets/img/portfolio/festivaux/JCC9.webp',
+        ]
+      },
+
+      jtc: {
+        title: 'JTC — Journées Théâtrales de Carthage',
+        breadcrumb: 'JTC',
+        info: {
+          category: 'Festivals',
+          event: 'Journées Théâtrales de Carthage',
+          location: 'Tunis, Tunisia',
+          year: '2023',
+          role: 'Event Photographer'
+        },
+        description: {
+          title: 'About the JTC',
+          p1: 'The Journées Théâtrales de Carthage (JTC) is an international theatre festival celebrating Arab and African performing arts. It provides a stage for emerging and established theatre companies to present their work to a wide and engaged audience.',
+          p2: 'During the JTC, I focused on capturing the raw emotion of live performance — the physicality of actors on stage, the reactions of the audience, and the behind-the-scenes moments that rarely make it into official coverage.'
+        },
+        images: [
+          'assets/img/portfolio/festivaux/JTC1.webp',
+          'assets/img/portfolio/festivaux/JTC2.webp',
+          'assets/img/portfolio/festivaux/jtc3.jpg',
+          'assets/img/portfolio/festivaux/JTC3.webp',
+          'assets/img/portfolio/festivaux/JTC4.webp',
+          'assets/img/portfolio/festivaux/JTC5.webp',
+          'assets/img/portfolio/festivaux/jtc6.webp',
+        ]
+      },
+
+      jmc: {
+        title: 'JMC — Journées Musicales de Carthage',
+        breadcrumb: 'JMC',
+        info: {
+          category: 'Festivals',
+          event: 'Journées Musicales de Carthage',
+          location: 'Tunis, Tunisia',
+          year: '2023',
+          role: 'Event Photographer'
+        },
+        description: {
+          title: 'About the JMC',
+          p1: 'The Journées Musicales de Carthage (JMC) is a celebration of Arab and African musical heritage, featuring concerts, workshops, and encounters between artists from across the region. The festival spans multiple venues across the city.',
+          p2: 'My photography during the JMC aimed to translate sound into image — capturing musicians mid-performance, the concentration on their faces, crowd energy, and the unique light of each venue to convey the spirit of the music visually.'
+        },
+        images: [
+          'assets/img/portfolio/festivaux/JMC1.webp',
+          'assets/img/portfolio/festivaux/JMC2.webp',
+          'assets/img/portfolio/festivaux/jmc3.webp',
+          'assets/img/portfolio/festivaux/JMC4.webp',
+          'assets/img/portfolio/festivaux/JMC5.jpg',
+          'assets/img/portfolio/festivaux/JMC6.webp',
+          'assets/img/portfolio/festivaux/JMC7.jpg',
+        ]
+      },
+
+      workshop: {
+        title: 'Workshops',
+        breadcrumb: 'Workshops',
+        info: {
+          category: 'Events',
+          event: 'Photography & Arts Workshops',
+          location: 'Tunisia',
+          year: '2023–2024',
+          role: 'Photographer / Documenter'
+        },
+        description: {
+          title: 'Workshop Documentation',
+          p1: 'These images document a series of creative and professional workshops held across Tunisia. From photography masterclasses to artistic residencies, each session brought together participants eager to learn, create, and exchange.',
+          p2: 'My role was to document the process honestly — the focus of participants, the interaction between facilitators and learners, and the small moments of discovery that define a good workshop experience.'
+        },
+        images: [
+          'assets/img/portfolio/workshop/w1.webp',
+          'assets/img/portfolio/workshop/w2.webp',
+          'assets/img/portfolio/workshop/W3.jpg',
+          'assets/img/portfolio/workshop/W4.webp',
+          'assets/img/portfolio/workshop/W5.webp',
+          'assets/img/portfolio/workshop/W6.webp',
+          'assets/img/portfolio/workshop/W7.jpg',
+          'assets/img/portfolio/workshop/W8.webp',
+          'assets/img/portfolio/workshop/W9.webp',
+          'assets/img/portfolio/workshop/W10.jpg',
+          'assets/img/portfolio/workshop/W11.webp',
+          'assets/img/portfolio/workshop/W12.jpg',
+          'assets/img/portfolio/workshop/W13.jpg',
+        ]
+      },
+
+      'street-life': {
+        title: 'Daily Life — Street Life',
+        breadcrumb: 'Street Life',
+        info: {
+          category: 'Daily Life',
+          event: 'Street Photography',
+          location: 'Tunisia',
+          year: 'Ongoing',
+          role: 'Street Photographer'
+        },
+        description: {
+          title: 'Street Life',
+          p1: 'This series is an ongoing documentary project capturing everyday life on the streets of Tunisia. Markets, alleyways, commuters, vendors, and passersby — each frame is an unposed slice of ordinary life made extraordinary through light and timing.',
+          p2: 'Street photography demands patience, presence, and a respect for the people being photographed. These images reflect a personal visual diary of places and moments that would otherwise go unnoticed.'
+        },
+        images: [
+          'assets/img/portfolio/Quotidien/st1.webp',
+          'assets/img/portfolio/Quotidien/st2.webp',
+          'assets/img/portfolio/Quotidien/st3.webp',
+          'assets/img/portfolio/Quotidien/st4.webp',
+          'assets/img/portfolio/Quotidien/st5.webp',
+          'assets/img/portfolio/Quotidien/st6.webp',
+          'assets/img/portfolio/Quotidien/st7.webp',
+          'assets/img/portfolio/Quotidien/st8.webp',
+          'assets/img/portfolio/Quotidien/st9.webp',
+          'assets/img/portfolio/Quotidien/st10.webp',
+          'assets/img/portfolio/Quotidien/P1680094.webp',
+        ]
+      }
+
+    };
+
+    // ─── LOAD CONTENT FROM URL PARAM ─────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // Read ?category=jcc from the URL
+      const params = new URLSearchParams(window.location.search);
+      const key = (params.get('category') || 'jcc').toLowerCase();
+      const data = categoryData[key] || categoryData['jcc'];
+
+      // Page title & breadcrumb
+      document.getElementById('page-title').textContent = data.title;
+      document.getElementById('breadcrumb-current').textContent = data.breadcrumb;
+      document.title = data.title + ' — Portfolio';
+
+      // Info sidebar
+      document.getElementById('info-category').textContent = data.info.category;
+      document.getElementById('info-event').textContent = data.info.event;
+      document.getElementById('info-location').textContent = data.info.location;
+      document.getElementById('info-year').textContent = data.info.year;
+      document.getElementById('info-role').textContent = data.info.role;
+
+      // Description
+      document.getElementById('desc-title').textContent = data.description.title;
+      document.getElementById('desc-body-1').textContent = data.description.p1;
+      document.getElementById('desc-body-2').textContent = data.description.p2;
+
+      // Swiper slides
+      const swiperWrapper = document.getElementById('swiper-slides');
+      data.images.forEach(function (src) {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        slide.innerHTML = '<img src="' + src + '" alt="Portfolio Image" class="img-fluid" loading="lazy">';
+        swiperWrapper.appendChild(slide);
+      });
+
+    });
+  </script>
+
+</body>
 </html>
