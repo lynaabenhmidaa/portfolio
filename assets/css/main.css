@@ -16,6 +16,34 @@
   --heading-font: "Ubuntu",  sans-serif;
   --nav-font: "Nunito",  sans-serif;
 }
+/* Sub-filter styling */
+.portfolio-filters .sub-filters {
+  list-style: none;
+  padding: 4px 0 6px 14px;
+  margin: 0;
+  display: none; /* hidden by default, shown when parent is active */
+  flex-direction: column;
+  gap: 2px;
+}
+.portfolio-filters li.parent-active > .sub-filters {
+  display: flex;
+}
+.portfolio-filters .sub-filters li {
+  font-size: 13px;
+  color: var(--default-color);
+  opacity: 0.65;
+  cursor: pointer;
+  padding: 3px 0;
+  transition: opacity 0.2s, color 0.2s;
+}
+.portfolio-filters .sub-filters li:hover {
+  opacity: 1;
+}
+.portfolio-filters .sub-filters li.filter-active {
+  opacity: 1;
+  color: var(--accent-color);
+  font-weight: 500;
+}
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
